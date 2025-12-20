@@ -1,0 +1,321 @@
+/* ==============================
+   GLOBAL
+============================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #020617;           /* full dark background */
+  color: #e5e7eb;
+}
+
+/* Wrap whole page */
+.page-wrapper {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ==============================
+   HEADER
+============================== */
+.top-header {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #f9fafb;
+}
+
+.tagline {
+  margin: 0.4rem 0 0 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.badge {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  background: #020617;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+/* ==============================
+   LAYOUT
+============================== */
+.layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1.5rem;
+}
+
+/* For small screens */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==============================
+   CARDS
+============================== */
+.card {
+  background: #0f172a;
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 0 30px rgba(0,0,0,0.35);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f9fafb;
+}
+
+.card-header p {
+  margin: 0.4rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.card-body {
+  font-size: 0.92rem;
+}
+
+/* ==============================
+   ERROR + HINT
+============================== */
+.error {
+  background: #7f1d1d;
+  color: #fecaca;
+  padding: 0.7rem 0.9rem;
+  border-left: 4px solid #b91c1c;
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.hint-text {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ==============================
+   FORM
+============================== */
+.upload-form {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+/* File button */
+.file-label {
+  background: #1f2937;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid #4b5563;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.file-label input {
+  display: none;
+}
+
+/* File name text */
+.file-name {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Input + select */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-group label {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.field-group input,
+.field-group select {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  min-width: 190px;
+}
+
+/* Button */
+button {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+}
+
+/* ==============================
+   RESULT AREA
+============================== */
+.card-subsection {
+  margin-top: 1.2rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #1f2937;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pill {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: #020617;
+  border: 1px solid #334155;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.result img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+}
+
+/* ==============================
+   REPORTS TABLE
+============================== */
+.table-wrapper {
+  max-height: 320px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #111827;
+}
+
+.reports table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: #020617;
+}
+
+.reports thead {
+  background: #0b1120;
+}
+
+.reports th,
+.reports td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid #111827;
+  text-align: left;
+}
+
+.reports th {
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+.reports tr:nth-child(even) td {
+  background: #020617;
+}
+
+.reports tr:nth-child(odd) td {
+  background: #020617;
+}
+
+.reports tr:hover td {
+  background: #111827;
+  transition: 0.15s;
+}
+
+/* ==============================
+   SEVERITY BADGES
+============================== */
+.sev {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.sev.low {
+  background-color: #065f46;   /* deep green */
+  color: #bbf7d0;
+  border: 1px solid #047857;
+}
+
+.sev.medium {
+  background-color: #92400e;   /* amber */
+  color: #fef3c7;
+  border: 1px solid #b45309;
+}
+
+.sev.high {
+  background-color: #7f1d1d;   /* strong red */
+  color: #fecaca;
+  border: 1px solid #b91c1c;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer {
+  max-width: 1000px;
+  margin: 1.8rem auto 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.footer-tag {
+  color: #e5e7eb;
+  font-weight: 500;
+}

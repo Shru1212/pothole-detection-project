@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Pothole Detection & Reporting</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="title-block">
+        <h1>Smart Pothole Detection System</h1>
+        <p class="tagline">
+          Vision-based detection with simple reporting for smarter road maintenance.
+        </p>
+      </div>
+      <div class="badge">
+        Mini Project · Prototype v1.0
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- Left side: Upload + Result -->
+      <section class="left-column">
+        <div class="card">
+          <div class="card-header">
+            <h2>Upload & Detect</h2>
+            <p>Upload a road image, add basic details, and let the system detect potholes.</p>
+          </div>
+
+          {% if error %}
+            <div class="error">{{ error }}</div>
+          {% endif %}
+
+          <div class="card-body">
+            <!-- Upload + Reporting Form -->
+            <form method="POST" enctype="multipart/form-data" class="upload-form">
+              <div class="form-row">
+                <label class="file-label">
+                  <span>Choose Image</span>
+                  <input id="imageInput" type="file" name="image" accept="image/*" required>
+                </label>
+                <span id="fileName" class="file-name">No file selected</span>
+              </div>
+
+              <div class="form-row">
+                <div class="field-group">
+                  <label>
+                    Location (road / area)
+                    <input type="text" name="location" placeholder="e.g., Near HKBK College Gate">
+                  </label>
+                </div>
+
+                <div class="field-group">
+                  <label>
+                    Severity
+                    <select name="severity">
+                      <option value="Low">Low</option>
+                      <option value="Medium" selected>Medium</option>
+                      <option value="High">High</option>
+                    </select>
+                  </label>
+                </div>
+
+                <button type="submit">Detect & Save Report</button>
+              </div>
+            </form>
+
+            <!-- Detection Result -->
+            {% if pothole_count is not none %}
+              <div class="result card-subsection">
+                <div class="result-header">
+                  <h3>Detection Result</h3>
+                  <span class="pill">
+                    Potholes detected: <strong>{{ pothole_count }}</strong>
+                  </span>
+                </div>
+
+                {% if result_image %}
+                  <img src="{{ result_image }}" alt="Pothole Detection Result">
+                {% endif %}
+              </div>
+            {% else %}
+              <p class="hint-text">
+                Tip: Use images where potholes appear darker than the surrounding road for best results.
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Right side: Reports history -->
+      <section class="right-column">
+        <div class="card">
+          <div class="card-header">
+            <h2>Pothole Reports History</h2>
+            <p>Recent detections with location, severity, and pothole count.</p>
+          </div>
+          <div class="card-body">
+            {% if reports and reports|length > 0 %}
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Location</th>
+                      <th>Severity</th>
+                      <th>Potholes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for r in reports|reverse %}
+                      <tr>
+                        <td>{{ r.timestamp }}</td>
+                        <td>{{ r.location }}</td>
+                        <td>
+                          <span class="sev {{ r.severity | lower }}">
+                            {{ r.severity }}
+                          </span>
+                        </td>
+                        <td>{{ r.potholes }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            {% else %}
+              <p class="hint-text">
+                No reports yet. Run a detection to start building your pothole log.
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Developed as a Mini Project &mdash; Smart Pothole Detection & Reporting |
+        <span class="footer-tag">CSE · 5th Sem</span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Tiny JS: show selected file name -->
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const fileNameSpan = document.getElementById('fileName');
+
+    if (imageInput && fileNameSpan) {
+      imageInput.addEventListener('change', function () {
+        if (this.files && this.files.length > 0) {
+          fileNameSpan.textContent = this.files[0].name;
+        } else {
+          fileNameSpan.textContent = "No file selected";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

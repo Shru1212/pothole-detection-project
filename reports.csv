@@ -1,0 +1,30 @@
+timestamp,location,severity,potholes,image_path
+2025-12-05 00:35:08,Not specified,Medium,7,static/output.jpg
+2025-12-05 00:35:46,nelamangala,Medium,6,static/output.jpg
+2025-12-05 00:42:04,benaka layout,Low,10,static/output.jpg
+2025-12-05 00:43:27,Not specified,High,7,static/output.jpg
+2025-12-05 00:43:41,Not specified,High,7,static/output.jpg
+2025-12-05 00:44:18,Not specified,High,0,static/output.jpg
+2025-12-05 00:44:42,Not specified,High,0,static/output.jpg
+2025-12-05 00:45:01,Not specified,Medium,10,static/output.jpg
+2025-12-05 00:57:28,H.K.B.K. COLLEGE OF ENGINEERING BANGALORE,Medium,0,static/output.jpg
+2025-12-05 00:58:18,Not specified,Medium,7,static/output.jpg
+2025-12-05 06:27:26,H.K.B.K. COLLEGE OF ENGINEERING BANGALORE,Medium,18,static/output.jpg
+2025-12-05 09:33:35,"Bangalore, karnataka",Medium,18,static/output.jpg
+2025-12-05 09:49:59,nelamangala,Medium,18,static/output.jpg
+2025-12-05 09:50:33,kengeri,Medium,7,static/output.jpg
+2025-12-05 09:59:20,Not specified,Medium,4,static/output.jpg
+2025-12-05 09:59:36,Not specified,Medium,11,static/output.jpg
+2025-12-05 10:00:10,Not specified,Medium,7,static/output.jpg
+2025-12-05 10:09:21,Not specified,Medium,5,static/output.jpg
+2025-12-05 10:09:35,Not specified,High,4,static/output.jpg
+2025-12-05 10:10:00,Not specified,Low,5,static/output.jpg
+2025-12-05 10:10:40,Not specified,Medium,7,static/output.jpg
+2025-12-05 10:29:40,bidadi,High,4,static/output.jpg
+2025-12-05 10:46:04,Not specified,Medium,18,static/output.jpg
+2025-12-05 10:49:31,bidadi,High,4,static/output.jpg
+2025-12-05 10:50:13,kengeri,Low,5,static/output.jpg
+2025-12-08 22:23:38,kengeri,Low,5,static/output.jpg
+2025-12-09 15:32:08,H.K.B.K. COLLEGE OF ENGINEERING BANGALORE,High,4,static/output.jpg
+2025-12-09 15:33:03,bidadi,Low,18,static/output.jpg
+2025-12-09 15:33:53,bidadi,High,7,static/output.jpg
